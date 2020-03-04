@@ -9,7 +9,7 @@ This project is an opinionated build automation for front-end web development ba
 
 - Pug compilation with [gulp-pug](https://www.npmjs.com/package/gulp-pug)
 - Tidy Html files with [gulp-prettier](https://www.npmjs.com/package/gulp-prettier)
-- Concatinate the Javascript files with [gulp-include](https://www.npmjs.com/package/gulp-include)
+- Concatenate the Javascript files with [gulp-include](https://www.npmjs.com/package/gulp-include)
 - Sass compilation with [gulp-sass](https://www.npmjs.com/package/gulp-sass)
 - ES6 transpilation with [gulp-babel](https://www.npmjs.com/package/gulp-babel)
 - Auto-refresh browser with [browser sync](https://www.npmjs.com/package/browser-sync)
