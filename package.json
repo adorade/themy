@@ -1,0 +1,29 @@
+{
+  "name": "themy",
+  "version": "1.0.0",
+  "description": "Front-end Starter Kit with Gulp for Themeforest Projects",
+  "homepage": "https://github.com/adorade/themy#readme",
+  "author": "Marian Bolojan <office.adorade@gmail.com> (https://adorade.ro)",
+  "main": "gulpfile.js",
+  "repository": "github:adorade/themy",
+  "bugs": {
+    "email": "office.adorade@gmail.com",
+    "url": "https://github.com/adorade/themy/issues"
+  },
+  "keywords": [
+    "gulp",
+    "pug",
+    "scss",
+    "babel",
+    "es6",
+    "front-end",
+    "optimize",
+    "minify",
+    "theme",
+    "theme-development",
+    "themeforest",
+    "starter-kit"
+  ],
+  "private": true,
+  "license": "MIT"
+}

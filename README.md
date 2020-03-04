@@ -1,5 +1,6 @@
 # Front-end Starter Kit with Gulp
 
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/adorade/themy.svg?label=&color=green&logo=github)](https://github.com/adorade/themy/blob/master/package.json)
 [![license](https://img.shields.io/github/license/adorade/themy.svg?label=)](https://mit-license.org)
 
 This project is an opinionated build automation for front-end web development based on [Node](https://nodejs.org/), [Gulp](http://gulpjs.com/), [Yarn](https://yarnpkg.com/), [Sass](http://sass-lang.com/), [Babel](https://babeljs.io/) and [Pug](https://pugjs.org/) for Themeforest Projects.
@@ -24,7 +25,7 @@ This project is an opinionated build automation for front-end web development ba
 1. Clone this repository
 
     ```bash
-    git clone https://github.com/adorade/themy.git
+    git clone https://github.com/adorade/themy.git my-new-project
     ```
 
 2. Update the files
