@@ -6,28 +6,169 @@
 // https://stylelint.io/user-guide/configure
 
 module.exports = {
+  extends: "stylelint-config-standard",
+  plugins: [ "stylelint-scss","stylelint-order" ],
   rules: {
-    "block-no-empty": true,
-    "color-no-invalid-hex": true,
-    "comment-no-empty": true,
-    "declaration-block-no-duplicate-properties": true,
+    "at-rule-empty-line-before": null,
+    "at-rule-name-space-after": "always",
+    "at-rule-no-unknown": null,
+    "at-rule-no-vendor-prefix": true,
+    "at-rule-semicolon-space-before": "never",
+    "block-closing-brace-empty-line-before": null,
+    "block-closing-brace-newline-after": [ "always", {
+      "ignoreAtRules": [ "if", "else" ]
+    }],
+    "block-opening-brace-space-before": null,
+    "color-named": "never",
+    "comment-word-blacklist": [
+      [ "/^TODO:/", "/^FIXME:/" ],
+      {
+        "severity": "warning"
+      }
+    ],
+    "declaration-block-semicolon-newline-after": "always-multi-line",
+    "declaration-block-semicolon-newline-before": "never-multi-line",
+    "declaration-block-semicolon-space-after": "always-single-line",
+    "declaration-empty-line-before": "never",
+    "declaration-no-important": true,
+    "declaration-property-unit-blacklist": {
+      "line-height": [ "px", "em", "rem" ]
+    },
+    "declaration-property-unit-whitelist": {
+      "font-size": [ "rem", "em", "px", "%" ],
+      "/^animation/": [ "s" ],
+      "/^transition/": [ "s", "ms" ]
+    },
+    "font-family-name-quotes": "always-where-recommended",
+    "font-weight-notation": [ "numeric", {
+      "ignore": [ "relative" ]
+    }],
+    "function-url-no-scheme-relative": true,
+    "function-url-quotes": "never",
+    "indentation": 2,
     "length-zero-no-unit": true,
-    "declaration-block-no-shorthand-property-overrides": true,
-    "font-family-no-duplicate-names": true,
-    "font-family-no-missing-generic-family-keyword": true,
-    "function-calc-no-unspaced-operator": true,
-    "function-linear-gradient-no-nonstandard-direction": true,
-    "keyframe-declaration-no-important": true,
-    "media-feature-name-no-unknown": true,
-    "no-duplicate-at-import-rules": true,
-    "no-empty-source": true,
+    "max-empty-lines": 2,
+    "max-line-length": null,
+    "media-feature-name-no-unknown": [ true, {
+      "ignoreMediaFeatureNames": [ "prefers-reduced-motion" ]
+    }],
+    "media-feature-name-no-vendor-prefix": true,
+    "media-feature-parentheses-space-inside": "never",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-range-operator-space-before": "never",
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": true,
+    "number-leading-zero": "never",
+    "no-eol-whitespace": true,
     "no-extra-semicolons": true,
-    "no-invalid-double-slash-comments": true,
-    "property-no-unknown": true,
-    "selector-pseudo-class-no-unknown": true,
-    "selector-pseudo-element-no-unknown": true,
-    "selector-type-no-unknown": true,
-    "string-no-newline": true,
-    "unit-no-unknown": true
+    "no-empty-source": null,
+    "no-missing-end-of-source-newline": true,
+    "property-no-vendor-prefix": true,
+    "rule-empty-line-before": [ "always-multi-line", {
+      "except": [ "inside-block-and-after-rule", "first-nested" ],
+      "ignore": [ "after-comment", "inside-block" ]
+    }],
+    "selector-attribute-quotes": "always",
+    "selector-list-comma-newline-after": "always",
+    "selector-list-comma-newline-before": "never-multi-line",
+    "selector-list-comma-space-after": "always-single-line",
+    "selector-list-comma-space-before": "never-single-line",
+    "selector-max-attribute": 2,
+    "selector-max-class": 4,
+    "selector-max-combinators": 4,
+    "selector-max-compound-selectors": 4,
+    "selector-max-empty-lines": 1,
+    "selector-max-id": 0,
+    "selector-max-specificity": null,
+    "selector-max-type": 2,
+    "selector-max-universal": 1,
+    "selector-no-qualifying-type": [ true, {
+      "ignore": [ "attribute" ]
+    }],
+    "selector-no-vendor-prefix": true,
+    "string-quotes": "double",
+    "value-keyword-case": "lower",
+    "value-list-comma-newline-after": "always-multi-line",
+    "value-list-comma-newline-before": "never-multi-line",
+    "value-list-comma-space-after": "always-single-line",
+    "value-no-vendor-prefix": true,
+    "scss/at-rule-no-unknown": true,
+    "scss/double-slash-comment-empty-line-before": ["always", {
+      "except": [ "first-nested" ],
+      "ignore": [ "between-comments", "stylelint-commands" ]
+    }],
+    "scss/double-slash-comment-whitespace-inside": "always",
+    "order/properties-order": [
+      [
+        {
+          groupName: "layout",
+          properties: [
+            "position", "top", "right", "bottom", "left", "z-index", "box-sizing", "display",
+            "flex-direction", "flex-wrap", "flex-flow", "flex-grow", "flex-shrink", "flex-basis",
+            "flex", "flex-align", "flex-order", "flex-pack",
+            "align-content", "align-items", "align-self", "justify-content", "order", "float"
+          ]
+        },
+        {
+          groupName: "box-model",
+          properties: [
+            "width", "min-width", "max-width", "height", "min-height", "max-height",
+            "padding", "padding-top", "padding-right", "padding-bottom", "padding-left",
+            "margin", "margin-top", "margin-right", "margin-bottom", "margin-left",
+            "overflow", "overflow-x", "overflow-y", "-webkit-overflow-scrolling", "-ms-overflow-style",
+            "-ms-overflow-x", "-ms-overflow-y", "-ms-overflow-style"
+          ]
+        },
+        {
+          groupName: "border",
+          properties: [
+            "border", "border-width", "border-style", "border-color",
+            "border-top", "border-top-width", "border-top-style", "border-top-color",
+            "border-right", "border-right-width", "border-right-style", "border-right-color",
+            "border-bottom", "border-bottom-width", "border-bottom-style", "border-bottom-color",
+            "border-left", "border-left-width", "border-left-style", "border-left-color",
+            "border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius",
+            "border-image", "border-image-source", "border-image-slice", "border-image-width", "border-image-outset", "border-image-repeat"
+          ]
+        },
+        {
+          groupName: "visual",
+          properties: [
+            "background", "background-image", "background-position", "background-size", "background-repeat",
+            "background-origin", "background-clip", "background-attachment", "background-color"
+          ]
+        },
+        {
+          groupName: "typo",
+          properties: [
+            "color", "font", "font-family", "font-size", "line-height", "font-style", "font-variant", "font-weight", "font-stretch", "font-size-adjust",
+            "text-align", "text-align-last", "text-combine-upright", "text-emphasis", "text-decoration",
+            "text-indent", "text-justify", "text-orientation", "text-overflow", "text-rendering",
+            "text-shadow", "text-transform", "text-underline-position", "-webkit-text-size-adjust", "-ms-text-size-adjust",
+            "letter-spacing", "word-break", "word-spacing", "word-wrap", "overflow-wrap", "tab-size", "white-space", "vertical-align",
+            "list-style", "list-style-position", "list-style-type", "list-style-image"
+          ]
+        },
+        {
+          groupName: "misc",
+          properties: [
+            "outline", "outline-width", "outline-style", "outline-color", "outline-offset", "box-shadow", "opacity",
+            "columns", "column-count", "column-fill", "column-gap", "column-span", "column-width",
+            "column-rule", "column-rule-style", "column-rule-width", "column-rule-color",
+            "orphans", "widows", "clip", "clear",
+            "transform", "transform-box", "transform-origin", "transform-style",
+            "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function",
+            "animation", "animation-name", "animation-duration", "animation-timing-function", "animation-delay", "animation-iteration-count",
+            "animation-direction", "animation-fill-mode", "animation-play-state",
+            "table-layout", "empty-cells", "caption-side", "border-spacing", "border-collapse",
+            "pointer-events","touch-action", "cursor", "visibility", "zoom", "speak",
+            "content", "quotes", "counter-reset", "counter-increment", "resize", "user-select", "caption-side"
+          ]
+        }
+      ],
+      {
+        unspecified: "bottom"
+      }
+    ]
   }
 }

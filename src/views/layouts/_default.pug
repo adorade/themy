@@ -4,45 +4,45 @@ include ../base/_mixins
 if (isTheme)
   if (!isProduction)
     //
-      =============================================================================
+      ================================================================================
 
         * This is a premium product available exclusively at sitename.net
         * The demo files are minified/crypted for copyright reasons,
         * you will find them, expanded, well commented and
         * papa coded accurately in your download pack.
 
-      =============================================================================
-    ="\n"
+      ================================================================================
+    = "\n"
   else
     //
       Template;
-        * Name          : themeName
-        * Created Date  : themeDate
-        * Version       : themeVersion
+        Name          : ThemeName
+        Created Date  : date
+        Version       : 1.0.0
       Author;
-        * Gmail         : mail@email.com
-        * Web Site      : https://www.website.com
-      ============================================================================================
-              Copyright (c) 2019 - username - https://themeforest.net/user/username
-      ============================================================================================
+        Email         : your@email.com
+        Website       : https://www.website.com
+      ================================================================================
+          Copyright (c) 2020 - username - https://themeforest.net/user/username
+      ================================================================================
+    = "\n"
 
-<!DOCTYPE html>
 html(lang=siteLanguage)
   head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
     +line
     +line
 
-    title=(pageTitle ? pageTitle + ' - ' + siteTitle:siteTitle)
+    title= (pageTitle ? pageTitle + ' - ' + siteTitle:siteTitle)
 
     include ../partials/includes/_meta-tags
     include ../partials/includes/_styles
+
   body
 
-    include ../partials/includes/_icons
+    //- include ../partials/includes/_icons
 
     //- - if (page !== 'login' && page !== 'register' && page !== 'forgot-password'  && page !== '404') {
     //- 	include header
