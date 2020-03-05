@@ -9,7 +9,7 @@
 module.exports = {
   disallowClassAttributeWithStaticValue: true,
   disallowDuplicateAttributes: true,
-  disallowHtmlText: true,
+  disallowHtmlText: null,
   disallowIdAttributeWithStaticValue: true,
   disallowMultipleLineBreaks: true,
   disallowSpacesInsideAttributeBrackets: true,

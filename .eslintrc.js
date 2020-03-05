@@ -40,7 +40,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        "gulpfile.js",
+        "gulpfile.esm.js",
         "**/vendor/js/**/*.js",
         "tools/**/*.js"
       ],
