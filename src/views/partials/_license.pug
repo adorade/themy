@@ -1,0 +1,26 @@
+//- partials/_license.pug
+if (isTheme)
+  if (!isProduction)
+    //
+      ================================================================================
+
+        * This is a premium product available exclusively at sitename.net
+        * The demo files are minified/crypted for copyright reasons,
+        * you will find them, expanded, well commented and
+        * coded coded accurately in your download pack.
+
+      ================================================================================
+    = "\n"
+  else
+    //
+      Template;
+        Name          : ThemeName
+        Created Date  : date
+        Version       : 1.0.0
+      Author;
+        Email         : your@email.com
+        Website       : https://www.website.com
+      ================================================================================
+          Copyright (c) 2020 - username - https://themeforest.net/user/username
+      ================================================================================
+    = "\n"
