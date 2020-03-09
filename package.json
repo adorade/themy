@@ -4,7 +4,7 @@
   "description": "Front-end Starter Kit with Gulp for ThemeForest Projects",
   "homepage": "https://github.com/adorade/themy#readme",
   "author": {
-    "name": "Marian Bolojan",
+    "name": "Adorade",
     "email": "office.adorade@gmail.com",
     "url": "https://adorade.ro"
   },
@@ -49,7 +49,10 @@
     "gulp-autoprefixer": "7.0.1",
     "gulp-babel": "8.0.0",
     "gulp-csso": "4.0.1",
+    "gulp-debug": "4.0.0",
     "gulp-eslint": "6.0.0",
+    "gulp-header": "2.0.9",
+    "gulp-htmlmin": "5.0.1",
     "gulp-if": "3.0.0",
     "gulp-imagemin": "7.1.0",
     "gulp-include": "2.4.1",
