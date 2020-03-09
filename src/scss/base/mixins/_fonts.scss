@@ -1,3 +1,7 @@
+//
+// Fonts mixins
+// =============================================================================
+
 @mixin changeFontSize($fontSize, $width: "xlarge") {
   font-size: #{$fontSize / 2}px;
 
