@@ -7,18 +7,26 @@ This project is an opinionated build automation for front-end web development ba
 
 ## Features
 
+- Sass compilation with [gulp-sass](https://www.npmjs.com/package/gulp-sass)
+- Code linting with [stylelint](https://github.com/olegskl/gulp-stylelint), [eslint](https://github.com/adametry/gulp-eslint) and [pug-lint](https://github.com/ilyakam/gulp-pug-linter)
+- Concatenate the Javascript files with [gulp-include](https://www.npmjs.com/package/gulp-include)
+- ES6 transpilation with [gulp-babel](https://www.npmjs.com/package/gulp-babel)
+- Minification with [csso](https://github.com/ben-eb/gulp-csso), [uglify](https://www.npmjs.com/package/gulp-uglify) and [htmlmin](https://github.com/jonschlinkert/gulp-htmlmin)
+- Autoprefix CSS with [autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
+- Compress images with [imagemin](https://www.npmjs.com/package/gulp-imagemin)
 - Pug compilation with [gulp-pug](https://www.npmjs.com/package/gulp-pug)
 - Tidy Html files with [gulp-prettier](https://www.npmjs.com/package/gulp-prettier)
-- Concatenate the Javascript files with [gulp-include](https://www.npmjs.com/package/gulp-include)
-- Sass compilation with [gulp-sass](https://www.npmjs.com/package/gulp-sass)
-- ES6 transpilation with [gulp-babel](https://www.npmjs.com/package/gulp-babel)
 - Auto-refresh browser with [browser sync](https://www.npmjs.com/package/browser-sync)
-- Minification ([Clean CSS](https://www.npmjs.com/package/gulp-clean-css) and [Uglify](https://www.npmjs.com/package/gulp-uglify))
-- Autoprefix CSS with [Autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
-- Better error messages in gulp with [Plumber](https://www.npmjs.com/package/gulp-plumber)
-- Compress images with [Imagemin](https://www.npmjs.com/package/gulp-imagemin)
-- Show compiled file size with [gulp-size](https://www.npmjs.com/package/gulp-size) in development mode
-- Output project files in zip file for Themeforest production with [gulp-zip](https://www.npmjs.com/package/gulp-zip)
+- Show compiled file size with [gulp-size](https://www.npmjs.com/package/gulp-size)
+- Output project files in zip file for ThemeForest production with [gulp-zip](https://www.npmjs.com/package/gulp-zip)
+
+## Requirements
+
+Before you continue, ensure you have meet the following requirements installed:
+
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/en/)
+- [Gulp](http://gulpjs.com/)
 
 ## How to use
 
@@ -28,27 +36,17 @@ This project is an opinionated build automation for front-end web development ba
     git clone https://github.com/adorade/themy.git my-new-project
     ```
 
-2. Update the files
-
-    **_package.json_**
+2. Open **_package.json_**, then edit it with your settings
 
     ```json
     ...
     "name": "theme-name",
-    "version": "1.0.0"
-    ...
-    ```
-
-    **_gulpfile.js_**
-
-    ```javascript
-    ...
-    // for themeforest theme
-    const  isThemeforestTheme  =  false;
-    // if production mode is active. -> false: developement mode
-    const  isProduction  =  false;
-    // if minified file included in production
-    const  minifiedFileInclude  =  false;
+    "version": "1.0.0",
+    "author": {
+        "name": "Your Name",
+        "email": "your@email.com",
+        "url": "https://yoursite.com"
+    },
     ...
     ```
 
@@ -62,9 +60,21 @@ This project is an opinionated build automation for front-end web development ba
 4. Develop awesome things
 
     ```bash
+    # development mode
     yarn start
     # or
     gulp
+
+    # build theme, use `--theme` flag
+    yarn start --theme
+    # or
+    gulp --theme
+
+    # production mode, use `--production`
+    # or `--prod` flag
+    yarn start --production
+    # or
+    gulp --production
     ```
   
 ## License  
