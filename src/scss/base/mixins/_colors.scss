@@ -1,3 +1,7 @@
+//
+// Colors mixins
+// =============================================================================
+
 @mixin backgroundColor($bgColor, $lightText: #fff, $darkText:#000) {
   background-color: $bgColor;
 

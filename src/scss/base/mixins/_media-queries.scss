@@ -1,3 +1,7 @@
+//
+// Media-queries mixins
+// =============================================================================
+
 @mixin mq($width: "desktop") {
   @if ($width=="mobile") {
     @media (min-width: 576px) {

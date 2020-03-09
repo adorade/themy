@@ -1,9 +1,12 @@
-include ../base/_variables
-include ../base/_mixins
+//- layouts/_default.pug
+html(lang= siteLanguage)
 
-include ../partials/_license
+  //- Variables and mixins for site
+  include ../base/_variables
+  include ../base/_mixins
 
-html(lang=siteLanguage)
+  include ../partials/_license
+
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
