@@ -4,12 +4,13 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { pkg, isProduction, destTarget } from './settings';
+import { pkg, isProduction, destTarget, cleanDest } from './settings';
 
 export const dirs = {
   root: './',
   src: 'src',
   dest: destTarget,
+  clean: cleanDest,
   arch: 'archive',
   logs: 'logs'
 };

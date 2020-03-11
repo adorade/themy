@@ -44,4 +44,9 @@ export const destTarget = isTheme
     ? 'dist'
     : 'tmp';
 
-// end of settings
+// Clean all `dest` folders (Default: false)
+// set to 'true' with command line option: '--clean'
+export const isClean = arg.clean ? arg.clean : false;
+
+const allDest = ['release', 'dist', 'tmp'];
+export const cleanDest = isClean ? allDest : destTarget;
