@@ -4,7 +4,7 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { pkg, isProduction, destTarget, cleanDest } from './settings';
+import { pkg, isTheme, destTarget, cleanDest } from './settings';
 
 export const dirs = {
   root: './',
@@ -38,13 +38,13 @@ export const paths = {
     del: `${dirs.dest}/vendors/`
   },
   images: {
-    src: !isProduction
+    src: isTheme
       ? `${dirs.src}/images/sample/**/*.{gif,jpg,jpeg,png,svg}`
       : `${dirs.src}/images/prod/**/*.{gif,jpg,jpeg,png,svg}`,
-    webp: !isProduction
+    webp: isTheme
       ? `${dirs.src}/images/sample/**/*.{jpg,jpeg,png}`
       : `${dirs.src}/images/prod/**/*.{jpg,jpeg,png}`,
-    dest: !isProduction ? `${dirs.dest}/images/sample/` : `${dirs.dest}/images/`
+    dest: `${dirs.dest}/assets/images/`
   },
   statics: {
     src: {
