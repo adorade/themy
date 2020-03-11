@@ -44,7 +44,7 @@ export const paths = {
     webp: isTheme
       ? `${dirs.src}/images/sample/**/*.{jpg,jpeg,png}`
       : `${dirs.src}/images/prod/**/*.{jpg,jpeg,png}`,
-    dest: `${dirs.dest}/assets/images/`
+    dest: isTheme ? `${dirs.dest}/assets/images/sample/` : `${dirs.dest}/assets/images/`
   },
   statics: {
     src: {
