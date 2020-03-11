@@ -1,6 +1,6 @@
 //- base/mixins/_image.pug
 //- Displaceable Image Mixin with Placeholder
-mixin img(photo,alt)
+mixin img(photo, alt)
   if (isTheme)
     img(src=(demo ? "assets/images/sample/" + photo : "assets/images/" + photo) alt=alt)
   else
