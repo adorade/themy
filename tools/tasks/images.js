@@ -5,15 +5,21 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, $, bs, green, magenta, paths, opts
+  src, dest, lastRun, $, green, magenta, bs, fs, paths, opts
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
-export function cleanImages () {
-  $.fancyLog(`${green('-> Clean all images')} in ${magenta(paths.images.dest)} folder`);
-  return $.del(paths.images.dest);
+export function cleanImages (done) {
+  if (fs.existsSync(paths.images.dest)) {
+    $.fancyLog(`${green('-> Clean all images')} in ${magenta(paths.images.dest)} folder`);
+    return $.del(paths.images.dest);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 cleanImages.displayName = 'clean:images';
 cleanImages.description = 'Clean up images folder';

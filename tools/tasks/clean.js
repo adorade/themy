@@ -4,13 +4,19 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { $, green, magenta, isClean, dirs } from '../util';
+import { $, green, magenta, dirs } from '../util';
 
-export function clean () {
-  const folder = isClean ? 'folders' : 'folder';
+export function clean (done) {
+  const folder = dirs.clean.length > 1 ? 'folders' : 'folder';
 
-  $.fancyLog(`${green('-> Clean all files')} in ${magenta(dirs.clean)} ${folder}`);
-  return $.del(dirs.clean);
+  if (dirs.clean.length > 0) {
+    $.fancyLog(`${green('-> Clean all files')} in ${magenta(dirs.clean)} ${folder}`);
+    return $.del(dirs.clean);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 clean.displayName = 'clean:all';
 clean.description = 'Clean up dist folders';

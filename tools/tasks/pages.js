@@ -5,15 +5,21 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, $, bs, green, magenta, isProduction, isTheme, paths, opts
+  src, dest, lastRun, $, green, magenta, bs, fs, isProduction, isTheme, paths, opts
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
-export function cleanPages () {
-  $.fancyLog(`${green('-> Clean all pages')} in ${magenta(paths.views.dest)} folder`);
-  return $.del(paths.views.files);
+export function cleanPages (done) {
+  if (fs.existsSync(paths.views.dest)) {
+    $.fancyLog(`${green('-> Clean all pages')} in ${magenta(paths.views.dest)} folder`);
+    return $.del(paths.views.files);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 cleanPages.displayName = 'clean:pages';
 cleanPages.description = 'Clean up html files';
