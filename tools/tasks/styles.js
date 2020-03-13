@@ -5,15 +5,21 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, $, bs, green, magenta, isProduction, isTheme, paths, opts, banner
+  src, dest, lastRun, $, green, magenta, bs, fs, isProduction, isTheme, paths, opts, banner
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
-export function cleanCss () {
-  $.fancyLog(`${green('-> Clean all styles')} in ${magenta(paths.styles.dest)} folder`);
-  return $.del(paths.styles.dest);
+export function cleanCss (done) {
+  if (fs.existsSync(paths.styles.dest)) {
+    $.fancyLog(`${green('-> Clean all styles')} in ${magenta(paths.styles.dest)} folder`);
+    return $.del(paths.styles.dest);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 cleanCss.displayName = 'clean:css';
 cleanCss.description = 'Clean up styles folders';

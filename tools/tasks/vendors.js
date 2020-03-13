@@ -5,15 +5,21 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, $, bs, green, magenta, paths, opts
+  src, dest, lastRun, $, green, magenta, bs, fs, paths, opts
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
-export function cleanVendor () {
-  $.fancyLog(`${green('-> Clean all styles')} in ${magenta(paths.vendors.del)} folder`);
-  return $.del(paths.vendors.del);
+export function cleanVendor (done) {
+  if (fs.existsSync(paths.vendors.del)) {
+    $.fancyLog(`${green('-> Clean all styles')} in ${magenta(paths.vendors.del)} folder`);
+    return $.del(paths.vendors.del);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 cleanVendor.displayName = 'clean:vendor';
 cleanVendor.description = 'Clean up vendor folders';

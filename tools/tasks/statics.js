@@ -4,15 +4,23 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { src, dest, lastRun, $, bs, green, magenta, dirs, paths, opts } from '../util';
+import {
+  src, dest, lastRun, $, green, magenta, bs, fs, dirs, paths, opts
+} from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
-export function cleanStatics () {
-  $.fancyLog(`${green('-> Clean up')} ${magenta(paths.statics.dest)} folder`);
-  $.fancyLog(`${green('-> Clean up')} all ${magenta('conf')} files`);
-  return $.del([paths.statics.dest, `${dirs.dest}/${paths.statics.ext}`]);
+export function cleanStatics (done) {
+  if (fs.existsSync(paths.statics.dest)) {
+    $.fancyLog(`${green('-> Clean up')} ${magenta(paths.statics.dest)} folder`);
+    $.fancyLog(`${green('-> Clean up')} all ${magenta('conf')} files`);
+    return $.del([paths.statics.dest, `${dirs.dest}/${paths.statics.ext}`]);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 cleanStatics.displayName = 'clean:statics';
 cleanStatics.description = 'Clean up statics folders';

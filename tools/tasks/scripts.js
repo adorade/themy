@@ -5,15 +5,21 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, $, bs, fs, green, magenta, isProduction, isTheme, paths, opts, banner
+  src, dest, lastRun, $, green, magenta, bs, fs, isProduction, isTheme, paths, opts, banner
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
-export function cleanJs () {
-  $.fancyLog(`${green('-> Clean all scripts')} in ${magenta(paths.scripts.dest)} folder`);
-  return $.del(paths.scripts.dest);
+export function cleanJs (done) {
+  if (fs.existsSync(paths.scripts.dest)) {
+    $.fancyLog(`${green('-> Clean all scripts')} in ${magenta(paths.scripts.dest)} folder`);
+    return $.del(paths.scripts.dest);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 cleanJs.displayName = 'clean:js';
 cleanJs.description = 'Clean up scripts folders';

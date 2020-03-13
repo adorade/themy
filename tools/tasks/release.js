@@ -5,15 +5,21 @@
  * ========================================================================== */
 
 import {
-  src, dest, $, green, magenta, paths
+  src, dest, $, green, magenta, fs, paths
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
-export function cleanZip () {
-  $.fancyLog(`${green('-> Clean up')} ${magenta(paths.release.dest)} file`);
-  return $.del(paths.release.dest);
+export function cleanZip (done) {
+  if (fs.existsSync(paths.release.dest)) {
+    $.fancyLog(`${green('-> Clean up')} ${magenta(paths.release.dest)} file`);
+    return $.del(paths.release.dest);
+  } else {
+    $.fancyLog(`${green('-> Nothing to clean!')}`);
+  }
+
+  done();
 }
 cleanZip.displayName = 'clean:js';
 cleanZip.description = 'Clean up zip files';
