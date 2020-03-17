@@ -1,5 +1,5 @@
 /*!
- * Themy (v1.0.0): .eslintrc.js
+ * Themy (v1.0.2): .eslintrc.js
  * Copyright (c) 2020 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
