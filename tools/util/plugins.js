@@ -27,3 +27,4 @@ export { bgBlue, bgRed, cyan, green, magenta, red } from 'ansi-colors';
 // Load others modules
 export const bs = require('browser-sync').create();
 export const fs = require('fs');
+export { glob } from 'glob';
