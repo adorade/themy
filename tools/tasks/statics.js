@@ -5,17 +5,19 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, $, green, magenta, bs, fs, dirs, paths, opts
+  src, dest, lastRun, $, green, magenta, bs, fs, glob, dirs, paths, opts
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
 export function cleanStatics (done) {
-  if (fs.existsSync(paths.statics.dest)) {
+  const configFiles = glob.sync(paths.statics.files);
+
+  if (fs.existsSync(paths.statics.dest) || configFiles.length > 0) {
+    $.fancyLog(`${green('-> Clean config')} ${magenta(configFiles)} files`);
     $.fancyLog(`${green('-> Clean up')} ${magenta(paths.statics.dest)} folder`);
-    $.fancyLog(`${green('-> Clean up')} all ${magenta('conf')} files`);
-    return $.del([paths.statics.dest, `${dirs.dest}/${paths.statics.ext}`]);
+    return $.del([paths.statics.dest, paths.statics.files]);
   } else {
     $.fancyLog(`${green('-> Nothing to clean!')}`);
   }

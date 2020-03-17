@@ -5,15 +5,17 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, $, green, magenta, bs, fs, isProduction, isTheme, paths, opts
+  src, dest, lastRun, $, green, magenta, bs, glob, isProduction, isTheme, paths, opts
 } from '../util';
 
 // For debugging usage:
 // .pipe($.debug({ title: 'unicorn:' }))
 
 export function cleanPages (done) {
-  if (fs.existsSync(paths.views.dest)) {
-    $.fancyLog(`${green('-> Clean all pages')} in ${magenta(paths.views.dest)} folder`);
+  const pageFiles = glob.sync(paths.views.files);
+
+  if (pageFiles.length > 0) {
+    $.fancyLog(`${green('-> Clean pages')} ${magenta(pageFiles)} files`);
     return $.del(paths.views.files);
   } else {
     $.fancyLog(`${green('-> Nothing to clean!')}`);

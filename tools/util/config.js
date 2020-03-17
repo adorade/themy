@@ -52,7 +52,7 @@ export const paths = {
       conf: `${dirs.src}/statics/**/*.{json,txt,webmanifest,xml}`
     },
     dest: `${dirs.dest}/statics/`,
-    ext: '**/*.{json,txt,webmanifest,xml}'
+    files: `${dirs.dest}/*.{json,txt,webmanifest,xml}`
   },
   views: {
     src: [ `${dirs.src}/views/**/*.pug`, '!**/_*.pug' ],
