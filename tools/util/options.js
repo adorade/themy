@@ -5,6 +5,7 @@
  * ========================================================================== */
 
 import { paths } from './config';
+import { time, getDateStr } from './settings';
 
 export const opts = {
   // Options for Styles
@@ -81,6 +82,12 @@ export const opts = {
     removeStyleLinkTypeAttributes: true
   },
   // Others
+  zip: {
+    modifiedTime: time
+  },
+  hash: {
+    format: '{name}-' + getDateStr(time) + '{ext}'
+  },
   size: {
     gzip: true,
     showFiles: true

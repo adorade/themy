@@ -4,8 +4,9 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { pkg, year } from './settings';
+import { pkg, time } from './settings';
 const title = `${pkg.name.charAt(0).toUpperCase()}${pkg.name.slice(1)}`;
+const year = time.getFullYear();
 
 export function banner () {
   let result = '';
