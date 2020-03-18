@@ -1,5 +1,5 @@
 /*!
- * Themy (v1.0.0): gulpfile.esm.js
+ * Themy (v1.0.2): gulpfile.esm.js
  * Copyright (c) 2020 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */

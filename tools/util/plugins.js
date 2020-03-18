@@ -1,5 +1,5 @@
 /*!
- * Themy (v1.0.0): tools/util/plugins.js
+ * Themy (v1.0.2): tools/util/plugins.js
  * Copyright (c) 2020 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
@@ -13,16 +13,13 @@ export const $ = require('gulp-load-plugins')({
   rename: {
     'gulp-stylelint': 'gStylelint',
     'gulp-eslint': 'gEslint',
-    'gulp-pug-linter': 'pugLinter'
+    'gulp-pug-linter': 'pugLinter',
+    'gulp-hash-filename': 'hash'
   }
 });
 
 // Colors for fancy log
 export { bgBlue, bgRed, cyan, green, magenta, red } from 'ansi-colors';
-
-// Fetch command line arguments for development or production environment
-// import minimist from 'minimist';
-// export const args = minimist(process.argv.slice(2));
 
 // Load others modules
 export const bs = require('browser-sync').create();

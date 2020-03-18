@@ -1,5 +1,5 @@
 /*!
- * Themy (v1.0.0): tools/tasks/index.js
+ * Themy (v1.0.2): tools/tasks/index.js
  * Copyright (c) 2020 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */

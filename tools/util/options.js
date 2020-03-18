@@ -1,10 +1,11 @@
 /*!
- * Themy (v1.0.0): tools/util/options.js
+ * Themy (v1.0.2): tools/util/options.js
  * Copyright (c) 2020 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
 import { paths } from './config';
+import { time, getDateStr } from './settings';
 
 export const opts = {
   // Options for Styles
@@ -81,6 +82,12 @@ export const opts = {
     removeStyleLinkTypeAttributes: true
   },
   // Others
+  zip: {
+    modifiedTime: time
+  },
+  hash: {
+    format: '{name}-' + getDateStr(time) + '{ext}'
+  },
   size: {
     gzip: true,
     showFiles: true

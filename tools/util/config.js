@@ -1,10 +1,10 @@
 /*!
- * Themy (v1.0.0): tools/util/config.js
+ * Themy (v1.0.2): tools/util/config.js
  * Copyright (c) 2020 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
-import { pkg, isTheme, destTarget, cleanDest } from './settings';
+import { pkg, isTheme, isStable, destTarget, cleanDest } from './settings';
 
 export const dirs = {
   root: './',
@@ -64,7 +64,13 @@ export const paths = {
   },
   release: {
     src: `${dirs.dest}/**`,
-    dest: `${dirs.arch}/${pkg.name}_${pkg.version}.zip`
+    dest: isStable
+      ? `${dirs.arch}/stable/`
+      : `${dirs.arch}/`,
+    file: `${pkg.name}_${pkg.version}.zip`,
+    del: isStable
+      ? `${dirs.arch}/stable/${pkg.name}_${pkg.version}.zip`
+      : [`${dirs.arch}/**/*.zip`, '!**/stable/**']
   },
   logs: {
     gulp: `${dirs.logs}/gulp/`
