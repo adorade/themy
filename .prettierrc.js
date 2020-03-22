@@ -11,9 +11,9 @@ module.exports = {
   useTabs: false,
   semi: true,
   singleQuote: false,
-  trailingComma: "none",
+  trailingComma: "es5",
   bracketSpacing: true,
-  arrowParens: "avoid",
+  arrowParens: "always",
   insertPragma: false,
   endOfLine: "lf"
 }
