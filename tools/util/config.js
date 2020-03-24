@@ -4,7 +4,7 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { pkg, isTheme, isStable, destTarget, cleanDest } from './settings';
+import { pkg, isTheme, isArchive, destTarget, cleanDest } from './settings';
 
 export const dirs = {
   root: './',
@@ -64,11 +64,11 @@ export const paths = {
   },
   release: {
     src: `${dirs.dest}/**`,
-    dest: isStable
+    dest: isArchive
       ? `${dirs.arch}/stable/`
       : `${dirs.arch}/`,
     file: `${pkg.name}_${pkg.version}.zip`,
-    del: isStable
+    del: isArchive
       ? `${dirs.arch}/stable/${pkg.name}_${pkg.version}.zip`
       : [`${dirs.arch}/**/*.zip`, '!**/stable/**']
   },

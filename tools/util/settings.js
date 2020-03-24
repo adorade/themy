@@ -47,13 +47,13 @@ export const isProduction = arg.production || arg.prod ? arg.production || arg.p
 export const isTheme = arg.theme ? arg.theme : false;
 
 // Release theme (Default: false)
-// set to 'true' with command line option: '--stable'
-export const isStable = arg.stable ? arg.stable : false;
+// set to 'true' with command line option: '--archive'
+export const isArchive = arg.archive ? arg.archive : false;
 
 /**
  * Dest folder for your theme
  * ========================================================================== */
-export const destTarget = isTheme
+export const destTarget = isTheme || isArchive
   ? `release/v${pkg.version}`
   : isProduction
     ? 'dist'
