@@ -76,7 +76,17 @@ Before you continue, ensure you have meet the following requirements installed:
     # or
     gulp --production
     ```
-  
+
+5. Archive your theme release
+
+    ```bash
+    # archive theme release to `archive/stable` folder
+    # use `--archive` flag
+    yarn start --archive
+    # or
+    gulp --archive
+    ```
+
 ## License  
   
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).

@@ -11,7 +11,7 @@ export {
 } from './plugins';
 
 // Settings
-export { isTheme, isProduction, isClean, isStable } from './settings';
+export { isTheme, isProduction, isClean, isArchive } from './settings';
 
 // Configuration
 export { dirs, paths } from './config';

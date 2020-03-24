@@ -5,6 +5,7 @@ dist
 release
 test
 tmp
+archive
 
 # To do Tasks
 .todo

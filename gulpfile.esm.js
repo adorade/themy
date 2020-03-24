@@ -4,7 +4,7 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { series, $, green, isTheme, isProduction } from './tools/util';
+import { series, $, green, isTheme, isProduction, isArchive } from './tools/util';
 import {
   checks, clean,
   cleanCss, lintScss, compile, minify,
@@ -96,7 +96,7 @@ buildRelease.description = 'Build only release files';
 /**
  * Define `build` task
  * -------------------------------------------------------------------------- */
-export const build = isTheme
+export const build = isTheme || isArchive
   ? series(clean, styles, scripts, vendors, images, statics, pages, release)
   : series(clean, styles, scripts, vendors, images, statics, pages);
 build.description = 'Build task for production';

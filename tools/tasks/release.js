@@ -5,7 +5,7 @@
  * ========================================================================== */
 
 import {
-  src, dest, $, green, magenta, fs, isStable, paths, opts
+  src, dest, $, green, magenta, fs, isArchive, paths, opts
 } from '../util';
 
 // For debugging usage:
@@ -13,7 +13,7 @@ import {
 
 export function cleanZip (done) {
   if (fs.existsSync(paths.release.dest)) {
-    $.fancyLog(`${green('-> Clean up')} ${magenta(`${paths.release.dest}/${paths.release.file}`)} file`);
+    $.fancyLog(`${green('-> Clean up')} ${magenta(`${paths.release.dest}${paths.release.file}`)} file`);
     return $.del(paths.release.del);
   } else {
     $.fancyLog(`${green('-> Nothing to clean!')}`);
@@ -28,7 +28,7 @@ export function archive () {
   $.fancyLog(`${green('-> Building theme')} ${magenta(paths.release.file)} file`);
   return src(paths.release.src)
     .pipe($.zip(paths.release.file, opts.zip))
-    .pipe($.if(!isStable,
+    .pipe($.if(!isArchive,
       $.hash(opts.hash)
     ))
     .pipe($.size(opts.size))
