@@ -5,7 +5,7 @@
  * ========================================================================== */
 
 export {
-  checks,                                         // Checks
+  checks, help,                                   // Checks
   clean,                                          // Clean
   cleanCss, lintScss, compile, minify,            // Styles
   cleanJs, lintJs, transpile, uglify,             // Scripts

@@ -4,7 +4,7 @@
  * Licensed under MIT
  * ========================================================================== */
 
-export { checks } from './checks';                                              // Checks
+export { checks, help } from './checks';                                        // Checks
 export { clean } from './clean';                                                // Clean
 export { cleanCss, lintScss, compile, minify } from './styles';                 // Styles
 export { cleanJs, lintJs, transpile, uglify } from './scripts';                 // Scripts
