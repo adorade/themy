@@ -6,7 +6,7 @@
 
 import { series, $, green, isTheme, isProduction, isArchive } from './tools/util';
 import {
-  checks, clean,
+  checks, help, clean,
   cleanCss, lintScss, compile, minify,
   cleanJs, lintJs, transpile, uglify,
   cleanVendor, vendorCss, vendorJs,
@@ -27,7 +27,7 @@ if (isTheme) {
 /**
  * Check dirs, paths, options and settings
  * -------------------------------------------------------------------------- */
-export { checks };
+export { checks, help };
 
 /**
  * Clean - clean all files from 'dist' folder
@@ -100,6 +100,12 @@ export const build = isTheme || isArchive
   ? series(clean, styles, scripts, vendors, images, statics, pages, release)
   : series(clean, styles, scripts, vendors, images, statics, pages);
 build.description = 'Build task for production';
+build.flags = {
+  '--clean': 'Clean all `dist` folders',
+  '--prod': 'Production mode, for demo',
+  '--theme': 'Build your theme',
+  '--archive': 'Archive your release'
+};
 
 /**
  * Watch and Serve - watch files for changes and reload

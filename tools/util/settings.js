@@ -34,7 +34,7 @@ const arg = (argList => {
   return arg;
 })(process.argv);
 
-// Clean all `dest` folders (Default: false)
+// Cleaning up all generated files (Default: false)
 // set to 'true' with command line option: '--clean'
 export const isClean = arg.clean ? arg.clean : false;
 
@@ -46,7 +46,7 @@ export const isProduction = arg.production || arg.prod ? arg.production || arg.p
 // set to 'true' with command line option: '--theme'
 export const isTheme = arg.theme ? arg.theme : false;
 
-// Release theme (Default: false)
+// Archive your theme (Default: false)
 // set to 'true' with command line option: '--archive'
 export const isArchive = arg.archive ? arg.archive : false;
 
