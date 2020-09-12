@@ -20,7 +20,7 @@ module.exports = {
     }],
     "block-opening-brace-space-before": null,
     "color-named": "never",
-    "comment-word-blacklist": [
+    "comment-word-disallowed-list": [
       [ "/^TODO:/", "/^FIXME:/" ],
       {
         "severity": "warning"
@@ -31,10 +31,10 @@ module.exports = {
     "declaration-block-semicolon-space-after": "always-single-line",
     "declaration-empty-line-before": "never",
     "declaration-no-important": true,
-    "declaration-property-unit-blacklist": {
+    "declaration-property-unit-disallowed-list": {
       "line-height": [ "px", "em", "rem" ]
     },
-    "declaration-property-unit-whitelist": {
+    "declaration-property-unit-allowed-list": {
       "font-size": [ "rem", "em", "px", "%" ],
       "/^animation/": [ "s" ],
       "/^transition/": [ "s", "ms" ]
