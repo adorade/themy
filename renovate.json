@@ -1,5 +1,32 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":maintainLockFilesWeekly",
+    "schedule:monthly",
+    ":assignAndReview(adorade)"
+  ],
+  "timezone": "Europe/Bucharest",
+  "labels": ["deps"],
+  "packageRules": [
+    {
+      "packagePatterns": ["^@babel/"],
+      "groupName": "babel packages",
+      "labels": ["build"]
+    },
+    {
+      "packagePatterns": ["^eslint|eslint$"],
+      "groupName": "eslint packages",
+      "labels": ["lint"]
+    },
+    {
+      "packagePatterns": ["^stylelint|stylelint$"],
+      "groupName": "stylelint packages",
+      "labels": ["lint"]
+    },
+    {
+      "packagePatterns": ["^gulp"],
+      "groupName": "gulp packages",
+      "labels": ["gulp"]
+    }
   ]
 }
