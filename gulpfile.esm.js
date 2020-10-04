@@ -7,8 +7,8 @@
 import { series, $, green, isTheme, isProduction, isArchive } from './tools/util';
 import {
   checks, help, clean,
-  cleanCss, lintScss, compile, minify,
-  cleanJs, lintJs, transpile, uglify,
+  cleanCss, lintScss, compile, minifyCss,
+  cleanJs, lintJs, transpile, minifyJs,
   cleanVendor, vendorCss, vendorJs,
   cleanImages, imagine, convert,
   cleanStatics, favicons, statica,
@@ -40,7 +40,7 @@ export { clean };
 /**
  * Styles - processes style files
  * -------------------------------------------------------------------------- */
-const styles = series(lintScss, compile, minify);
+const styles = series(lintScss, compile, minifyCss);
 export const buildStyles = series(cleanCss, styles);
 buildStyles.displayName = 'build:styles';
 buildStyles.description = 'Build only styles files';
@@ -48,7 +48,7 @@ buildStyles.description = 'Build only styles files';
 /**
  * Scripts - processes script files
  * -------------------------------------------------------------------------- */
-const scripts = series(lintJs, transpile, uglify);
+const scripts = series(lintJs, transpile, minifyJs);
 export const buildScripts = series(cleanJs, scripts);
 buildScripts.displayName = 'build:scripts';
 buildScripts.description = 'Build only scripts files';

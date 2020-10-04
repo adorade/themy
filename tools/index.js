@@ -7,8 +7,8 @@
 export {
   checks, help,                                   // Checks
   clean,                                          // Clean
-  cleanCss, lintScss, compile, minify,            // Styles
-  cleanJs, lintJs, transpile, uglify,             // Scripts
+  cleanCss, lintScss, compile, minifyCss,         // Styles
+  cleanJs, lintJs, transpile, minifyJs,           // Scripts
   cleanVendor, vendorCss, vendorJs,               // Vendors
   cleanImages, imagine, convert,                  // Images
   cleanStatics, favicons, statica,                // Statics

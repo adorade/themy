@@ -14,6 +14,7 @@ export const $ = require('gulp-load-plugins')({
     'gulp-stylelint': 'gStylelint',
     'gulp-eslint': 'gEslint',
     'gulp-pug-linter': 'pugLinter',
+    'gulp-terser-js': 'gTerser',
     'gulp-hash-filename': 'hash'
   }
 });

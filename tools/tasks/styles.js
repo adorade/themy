@@ -50,13 +50,13 @@ export function compile () {
 compile.displayName = 'compile:scss';
 compile.description = 'Compile SCSS files';
 
-export function minify (done) {
+export function minifyCss (done) {
   const condition = isProduction || isTheme;
 
   if (condition) {
     $.fancyLog(`${green('-> Minify CSS...')}`);
     return src(paths.styles.filter, {
-      since: lastRun(minify)
+      since: lastRun(minifyCss)
     })
       .pipe($.csso(opts.csso))
       .pipe($.rename({ suffix: '.min' }))
@@ -70,5 +70,5 @@ export function minify (done) {
 
   done();
 }
-minify.displayName = 'min:css';
-minify.description = 'Minify CSS files';
+minifyCss.displayName = 'min:css';
+minifyCss.description = 'Minify CSS files';
