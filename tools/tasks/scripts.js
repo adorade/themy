@@ -57,15 +57,19 @@ export function transpile () {
 transpile.displayName = 'transpile:js';
 transpile.description = 'Transpile JS via Babel';
 
-export function uglify (done) {
+export function minifyJs (done) {
   const condition = isProduction || isTheme;
 
   if (condition) {
     $.fancyLog(`${green('-> Minify JS...')}`);
     return src(paths.scripts.filter, {
-      // since: lastRun(uglify)
+      // since: lastRun(minifyJs)
     })
-      .pipe($.uglify(opts.uglify))
+      .pipe($.gTerser(opts.terser)
+        .on('error', () => {
+          this.emit('end');
+        })
+      )
       .pipe($.rename({ suffix: '.min' }))
       .pipe($.header(banner()))
       .pipe($.size(opts.size))
@@ -77,5 +81,5 @@ export function uglify (done) {
 
   done();
 }
-uglify.displayName = 'min:js';
-uglify.description = 'Minify JS files';
+minifyJs.displayName = 'min:js';
+minifyJs.description = 'Minify JS files';

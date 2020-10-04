@@ -8,8 +8,8 @@ import {
   series, watch, $, bgBlue, bgRed, green, magenta, red, bs, isProduction, paths, opts, dirs
 } from '../util';
 import {
-  lintScss, compile, minify,
-  lintJs, transpile, uglify,
+  lintScss, compile, minifyCss,
+  lintJs, transpile, minifyJs,
   vendorCss, vendorJs,
   imagine, convert, favicons, statica,
   lintPages, pagile, pagify
@@ -37,12 +37,12 @@ export function serve () {
     {
       name: 'Styles',
       paths: paths.styles.src,
-      tasks: [lintScss, compile, minify]
+      tasks: [lintScss, compile, minifyCss]
     },
     {
       name: 'Scripts',
       paths: paths.scripts.src,
-      tasks: [lintJs, transpile, uglify]
+      tasks: [lintJs, transpile, minifyJs]
     },
     {
       name: 'Vendor CSS',
