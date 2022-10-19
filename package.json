@@ -36,9 +36,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.8",
-    "@babel/eslint-parser": "7.15.8",
-    "@babel/preset-env": "7.15.8",
+    "@babel/core": "7.19.3",
+    "@babel/eslint-parser": "7.19.1",
+    "@babel/preset-env": "7.19.4",
     "ansi-colors": "4.1.1",
     "browser-sync": "2.27.7",
     "del": "6.0.0",
