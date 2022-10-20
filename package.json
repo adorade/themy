@@ -1,6 +1,6 @@
 {
   "name": "themy",
-  "version": "1.0.2",
+  "version": "2.0.0-dev",
   "description": "Front-end Starter Kit with Gulp for ThemeForest Projects",
   "homepage": "https://github.com/adorade/themy#readme",
   "author": {
@@ -30,9 +30,14 @@
   ],
   "scripts": {
     "verify": "node -v && npm -v && yarn -v && git --version && gulp -v",
-    "dev": "gulp",
+    "clean": "gulp clean:all",
+    "clean:all": "gulp clean:all --clean",
     "build": "gulp build",
-    "start": "gulp",
+    "build:demo": "gulp build --prod",
+    "build:theme": "gulp build --theme",
+    "build:archive": "gulp build --archive",
+    "dev": "gulp",
+    "serve": "gulp serve:watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -43,8 +48,8 @@
     "browser-sync": "2.27.10",
     "del": "7.0.0",
     "eslint": "8.25.0",
-    "esm": "3.2.25",
     "fancy-log": "2.0.0",
+    "glob": "8.0.3",
     "gulp": "4.0.2",
     "gulp-autoprefixer": "8.0.0",
     "gulp-babel": "8.0.0",
@@ -57,7 +62,6 @@
     "gulp-if": "3.0.0",
     "gulp-imagemin": "8.0.0",
     "gulp-include": "2.4.1",
-    "gulp-load-plugins": "2.0.8",
     "gulp-newer": "1.4.0",
     "gulp-prettier": "4.0.0",
     "gulp-pug": "5.0.0",
@@ -69,10 +73,14 @@
     "gulp-terser-js": "5.2.2",
     "gulp-webp": "4.0.1",
     "gulp-zip": "5.1.0",
+    "postcss": "8.4.18",
+    "sass": "1.55.0",
     "stylelint": "14.14.0",
-    "stylelint-config-standard": "29.0.0",
-    "stylelint-order": "5.0.0",
-    "stylelint-scss": "4.3.0"
+    "stylelint-config-standard-scss": "5.0.0",
+    "stylelint-order": "5.0.0"
+  },
+  "engines": {
+    "node": ">=14.16"
   },
   "private": true,
   "license": "MIT"

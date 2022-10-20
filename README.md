@@ -1,8 +1,9 @@
-# Front-end Starter Kit with Gulp
+# Front-end Starter Kit with Gulp for ThemeForest Projects
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/adorade/themy.svg?label=&color=green&logo=github)](https://github.com/adorade/themy/blob/main/package.json)
 [![license](https://img.shields.io/github/license/adorade/themy.svg?label=)](https://mit-license.org)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![GitHub Actions status](https://github.com/adorade/themy/workflows/Node%20CI/badge.svg)](https://github.com/adorade/themy/actions)
 
 This project is an opinionated build automation for front-end web development based on [Node](https://nodejs.org/), [Gulp](http://gulpjs.com/), [Yarn](https://yarnpkg.com/), [Sass](http://sass-lang.com/), [Babel](https://babeljs.io/) and [Pug](https://pugjs.org/) for ThemeForest Projects.
 
@@ -12,7 +13,7 @@ This project is an opinionated build automation for front-end web development ba
 - Code linting with [stylelint](https://github.com/olegskl/gulp-stylelint), [eslint](https://github.com/adametry/gulp-eslint) and [pug-lint](https://github.com/ilyakam/gulp-pug-linter)
 - Concatenate the Javascript files with [gulp-include](https://www.npmjs.com/package/gulp-include)
 - ES6 transpilation with [gulp-babel](https://www.npmjs.com/package/gulp-babel)
-- Minification with [csso](https://github.com/ben-eb/gulp-csso), [uglify](https://www.npmjs.com/package/gulp-uglify) and [htmlmin](https://github.com/jonschlinkert/gulp-htmlmin)
+- Minification with [csso](https://github.com/ben-eb/gulp-csso), [terser](https://www.npmjs.com/package/gulp-terser-js) and [htmlmin](https://github.com/jonschlinkert/gulp-htmlmin)
 - Autoprefix CSS with [autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
 - Compress images with [imagemin](https://www.npmjs.com/package/gulp-imagemin)
 - Pug compilation with [gulp-pug](https://www.npmjs.com/package/gulp-pug)
@@ -33,7 +34,7 @@ Before you continue, ensure you have meet the following requirements installed:
 
 1. Clone this repository
 
-    ```bash
+    ```sh
     git clone https://github.com/adorade/themy.git my-new-project
     ```
 
@@ -53,40 +54,50 @@ Before you continue, ensure you have meet the following requirements installed:
 
 3. Install the project dependencies
 
-    ```bash
+    ```sh
     cd my-new-project
     yarn install
     ```
 
 4. Develop awesome things
 
-    ```bash
+    ```sh
     # development mode
-    yarn start
+    yarn run dev
     # or
     gulp
 
     # build theme, use `--theme` flag
-    yarn start --theme
+    yarn run build:theme
     # or
-    gulp --theme
-
-    # production mode, use `--production`
-    # or `--prod` flag
-    yarn start --production
-    # or
-    gulp --production
+    gulp build --theme
     ```
 
 5. Archive your theme release
 
-    ```bash
+    ```sh
     # archive theme release to `archive/stable` folder
     # use `--archive` flag
-    yarn start --archive
+    yarn run build:archive
     # or
-    gulp --archive
+    gulp build --archive
     ```
+
+6. Launch your demo
+
+    ```sh
+    # production mode, for demo,
+    # use `--production` or `--prod` flag
+    yarn run build:demo
+    # or
+    gulp build --prod
+    ```
+
+## Vendors
+
+- jQuery v3.6.1
+- popper.js v2.11.6
+- Bootstrap v5.2.2
 
 ## License  
   

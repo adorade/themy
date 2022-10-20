@@ -1,13 +1,13 @@
 /*!
  * Themy (v1.0.2): .stylelintrc.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 // https://stylelint.io/user-guide/configure
 
 module.exports = {
-  extends: "stylelint-config-standard",
-  plugins: [ "stylelint-scss","stylelint-order" ],
+  extends: "stylelint-config-standard-scss",
+  plugins: [ "stylelint-scss", "stylelint-order" ],
   rules: {
     "at-rule-empty-line-before": null,
     "at-rule-name-space-after": "always",
@@ -87,12 +87,19 @@ module.exports = {
     }],
     "selector-no-vendor-prefix": true,
     "string-quotes": "double",
-    "value-keyword-case": "lower",
+    "value-keyword-case": ["lower", {
+      ignoreKeywords: ["currentColor"]
+    }],
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-newline-before": "never-multi-line",
     "value-list-comma-space-after": "always-single-line",
     "value-no-vendor-prefix": true,
+
+    // Plugins
+    "scss/at-mixin-argumentless-call-parentheses": null,
     "scss/at-rule-no-unknown": true,
+    "scss/comment-no-empty": null,
+    "scss/no-global-function-names": null,
     "scss/double-slash-comment-empty-line-before": ["always", {
       "except": [ "first-nested" ],
       "ignore": [ "between-comments", "stylelint-commands" ]
