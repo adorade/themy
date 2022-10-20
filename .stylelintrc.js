@@ -95,16 +95,6 @@ module.exports = {
     "value-list-comma-space-after": "always-single-line",
     "value-no-vendor-prefix": true,
 
-    // Invalids
-    "no-invalid-position-at-import-rule": null,
-    "scss/at-mixin-pattern": null,
-    "scss/at-rule-conditional-no-parentheses": null,
-    "scss/at-if-closing-brace-newline-after": null,
-    "scss/at-if-closing-brace-space-after": null,
-    "scss/at-else-closing-brace-newline-after": null,
-    "scss/at-else-closing-brace-space-after": null,
-    "scss/operator-no-unspaced": null,
-
     // Plugins
     "scss/at-mixin-argumentless-call-parentheses": null,
     "scss/at-rule-no-unknown": true,
