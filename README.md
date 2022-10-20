@@ -3,6 +3,7 @@
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/adorade/themy.svg?label=&color=green&logo=github)](https://github.com/adorade/themy/blob/main/package.json)
 [![license](https://img.shields.io/github/license/adorade/themy.svg?label=)](https://mit-license.org)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![GitHub Actions status](https://github.com/adorade/themy/workflows/Node%20CI/badge.svg)](https://github.com/adorade/themy/actions)
 
 This project is an opinionated build automation for front-end web development based on [Node](https://nodejs.org/), [Gulp](http://gulpjs.com/), [Yarn](https://yarnpkg.com/), [Sass](http://sass-lang.com/), [Babel](https://babeljs.io/) and [Pug](https://pugjs.org/) for ThemeForest Projects.
 

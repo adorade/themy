@@ -1,0 +1,44 @@
+# GitHub Actions allows you to build, test, and deploy applications in your language of choice
+name: Node CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+  - cron: 0 9 * * SAT
+
+jobs:
+  build:
+    name: Build on node ${{ matrix.node }} and ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [12, 14, 16]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    # checkout the repo
+    - name: Checkout the repo
+      uses: actions/checkout@v3
+
+    # use node.js matrix
+    - name: Use Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+
+    # install dependencies
+    - name: Clean install dependencies
+      run: yarn install
+
+    # verify build tools
+    - name: Verify build tools
+      run: yarn run verify
+
+    # build proccess
+    - name: Build proccess
+      run: yarn run build
