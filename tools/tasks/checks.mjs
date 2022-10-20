@@ -1,5 +1,5 @@
 /*!
- * Themy (v1.0.2): tools/tasks/checks.js
+ * Themy (v2.0.0): tools/tasks/checks.js
  * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
