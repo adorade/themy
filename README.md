@@ -93,6 +93,12 @@ Before you continue, ensure you have meet the following requirements installed:
     gulp build --prod
     ```
 
+## Vendors
+
+- jQuery v3.6.1
+- popper.js v2.11.6
+- Bootstrap v5.2.2
+
 ## License  
   
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
