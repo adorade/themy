@@ -1,6 +1,6 @@
 /*!
  * Themy (v1.0.2): .pug-lintrc.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 // https://github.com/pugjs/pug-lint#configuration-file

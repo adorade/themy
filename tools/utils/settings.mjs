@@ -1,21 +1,23 @@
 /*!
- * Themy (v1.0.2): tools/util/settings.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Themy (v1.0.2): tools/utils/settings.js
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
-import { fs } from './plugins';
+import { fs } from './index.mjs';
 
-export const pkg = require(`${process.cwd()}/package.json`);
+export const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+export const title = `${pkg.name.charAt(0).toUpperCase()}${pkg.name.slice(1)}`;
 export const time = new Date(
   process.env.SOURCE_DATE_EPOCH ? process.env.SOURCE_DATE_EPOCH * 1000 : new Date().getTime()
 );
 
 /**
  * Pass Arguments to gulp tasks
- * ========================================================================== */
-const arg = (argList => {
+ * -------------------------------------------------------------------------- */
+export const arg = (argList => {
   let arg = {}, a, opt, thisOpt, curOpt;
+
   for (a = 0; a < argList.length; a++) {
     thisOpt = argList[a].trim();
     opt = thisOpt.replace(/^-+/, '');
@@ -81,10 +83,10 @@ export const cleanDest = isClean ? allDest : oneDest;
 const pad = number => `0${number}`.slice(-2);
 
 export function getDateStr (dataObj) {
-  return dataObj.getUTCFullYear() +
-    '' + pad(dataObj.getUTCMonth() + 1) +
-    '' + pad(dataObj.getUTCDate()) +
-    '-' + pad(dataObj.getUTCHours()) +
-    '' + pad(dataObj.getUTCMinutes()) +
-    '' + pad(dataObj.getUTCSeconds());
+  return dataObj.getFullYear() +
+    '' + pad(dataObj.getMonth() + 1) +
+    '' + pad(dataObj.getDate()) +
+    '-' + pad(dataObj.getHours()) +
+    '' + pad(dataObj.getMinutes()) +
+    '' + pad(dataObj.getSeconds());
 }

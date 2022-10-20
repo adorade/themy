@@ -1,11 +1,10 @@
 /*!
- * Themy (v1.0.2): tools/util/options.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Themy (v1.0.2): tools/utils/options.js
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
-import { paths } from './config';
-import { time, getDateStr } from './settings';
+import { time, getDateStr, paths } from './index.mjs';
 
 export const opts = {
   // Options for Styles
@@ -14,8 +13,7 @@ export const opts = {
     reportOutputDir: paths.logs.gulp,
     reporters: [
       { formatter: 'string', console: true, save: 'styles.txt' }
-    ],
-    syntax: 'scss'
+    ]
   },
   sass: {
     outputStyle: 'expanded',
@@ -50,12 +48,17 @@ export const opts = {
     gif: { interlaced: true },
     jpeg: { progressive: true },
     png: { optimizationLevel: 4 },
-    svg: { plugins: [{ removeViewBox: true }] },
+    svg: { plugins: [
+      {
+        name: 'removeViewBox',
+        active: true
+      }
+    ]},
     general: {
       verbose: false,
       silent: true
     },
-    webp: { // https://github.com/imagemin/imagemin-webp#options
+    webp: {
       preset: 'default',
       quality: 60
     }

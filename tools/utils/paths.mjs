@@ -1,10 +1,10 @@
 /*!
- * Themy (v1.0.2): tools/util/config.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Themy (v1.0.2): tools/utils/paths.js
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
-import { pkg, isTheme, isArchive, destTarget, cleanDest } from './settings';
+import { pkg, isTheme, isArchive, destTarget, cleanDest } from './index.mjs';
 
 export const dirs = {
   root: './',
@@ -44,7 +44,9 @@ export const paths = {
     webp: isTheme
       ? `${dirs.src}/images/sample/**/*.{jpg,jpeg,png}`
       : `${dirs.src}/images/prod/**/*.{jpg,jpeg,png}`,
-    dest: isTheme ? `${dirs.dest}/assets/images/sample/` : `${dirs.dest}/assets/images/`
+    dest: isTheme
+      ? `${dirs.dest}/assets/images/sample/`
+      : `${dirs.dest}/assets/images/`
   },
   statics: {
     src: {

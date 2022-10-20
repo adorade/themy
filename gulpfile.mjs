@@ -1,10 +1,10 @@
 /*!
  * Themy (v1.0.2): gulpfile.esm.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
-import { series, $, green, isTheme, isProduction, isArchive } from './tools/util';
+import { series, fancyLog, green, isTheme, isProduction, isArchive } from './tools/utils/index.mjs';
 import {
   checks, help, clean,
   cleanCss, lintScss, compile, minifyCss,
@@ -14,14 +14,14 @@ import {
   cleanStatics, favicons, statica,
   cleanPages, lintPages, pagile, pagify,
   cleanZip, archive, serve
-} from './tools';
+} from './tools/index.mjs';
 
 if (isTheme) {
-  $.fancyLog(`${green('Looks like you are building the theme!')}`);
+  fancyLog(`${green('Looks like you are building the theme!')}`);
 } else if (isProduction) {
-  $.fancyLog(`${green('Looks like you are in production mode!')}`);
+  fancyLog(`${green('Looks like you are in production mode!')}`);
 } else {
-  $.fancyLog(`${green('Looks like you are in development mode!')}`);
+  fancyLog(`${green('Looks like you are in development mode!')}`);
 }
 
 /**

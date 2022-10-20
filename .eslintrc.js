@@ -1,6 +1,6 @@
 /*!
  * Themy (v1.0.2): .eslintrc.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 // https://eslint.org/docs/user-guide/configuring
@@ -40,13 +40,22 @@ module.exports = {
   overrides: [
     {
       files: [
-        "gulpfile.esm.js",
+        "gulpfile.mjs",
         "**/vendor/js/**/*.js",
-        "tools/**/*.js"
+        "tools/**/*.mjs",
+        ".eslintrc.js"
       ],
       rules: {
         semi: ["error", "always"]
       }
+    },
+    {
+      files: [
+        ".eslintrc.js"
+      ],
+      rules: {
+        quotes: ["error", "double"]
+      }
     }
   ]
-}
+};

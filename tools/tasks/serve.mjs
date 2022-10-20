@@ -1,19 +1,19 @@
 /*!
  * Themy (v1.0.2): tools/tasks/serve.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
 import {
-  series, watch, $, bgBlue, bgRed, green, magenta, red, bs, isProduction, paths, opts, dirs
-} from '../util';
+  series, watch, fancyLog, bgBlue, bgRed, green, magenta, red, isProduction, paths, opts, dirs, bs
+} from '../utils/index.mjs';
 import {
   lintScss, compile, minifyCss,
   lintJs, transpile, minifyJs,
   vendorCss, vendorJs,
   imagine, convert, favicons, statica,
   lintPages, pagile, pagify
-} from './';
+} from './index.mjs';
 
 export function serve () {
   // NOTE: port and prefix for theme
@@ -28,7 +28,7 @@ export function serve () {
   });
 
   function watchEvent (path, event, task) {
-    $.fancyLog(
+    fancyLog(
       `File ${magenta(path)} was ${green(event)} running ${red(task)}`
     );
   }
@@ -80,10 +80,10 @@ export function serve () {
   ];
 
   for (let watcher of watchers) {
-    $.fancyLog(bgRed(`Watching ${watcher.name}`));
+    fancyLog(bgRed(`Watching ${watcher.name}`));
 
     for (let p of [watcher.paths]) {
-      $.fancyLog(bgBlue('Source: '), magenta(p));
+      fancyLog(bgBlue('Source: '), magenta(p));
     }
 
     let taskNames = [];

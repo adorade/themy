@@ -1,6 +1,6 @@
 /*!
  * Themy (v1.0.2): tools/index.js
- * Copyright (c) 2020 Adorade (https://adorade.ro)
+ * Copyright (c) 2020 - 2022 Adorade (https://adorade.ro)
  * Licensed under MIT
  * ========================================================================== */
 
@@ -15,4 +15,4 @@ export {
   cleanPages, lintPages, pagile, pagify,          // Pages
   cleanZip, archive,                              // Release Theme
   serve                                           // Serve and Watch
-} from './tasks';
+} from './tasks/index.mjs';
