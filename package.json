@@ -8,7 +8,7 @@
     "email": "office.adorade@gmail.com",
     "url": "https://adorade.ro"
   },
-  "main": "gulpfile.esm.js",
+  "main": "gulpfile.mjs",
   "repository": "github:adorade/themy",
   "bugs": {
     "email": "office.adorade@gmail.com",
